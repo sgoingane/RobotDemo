@@ -37,7 +37,8 @@ void loop() {
   led_chase(blue, orange, 6000);
   delay(1000);
 
-  led_blink(green, cyan, 5000);
+  led_blink(green, cyan, 2000);
+  led_blink(green, cyan, 2000);
   delay(1000);
 
   led_breathe(red, 2000);

@@ -11,7 +11,7 @@
 #define BUZZER_PIN 10
 
 static int chargeNotes[] = { NOTE_G3, NOTE_C4, NOTE_E4, NOTE_G4, NOTE_E4, NOTE_G4 };
-static unsigned int chargeDuration[] = { 150, 150, 150, 300, 140, 600 };
+static unsigned int chargeDuration[] = { 125, 125, 125, 240, 112, 480 };
 static unsigned int chargeGap[] = { 50, 50, 50, 50, 50, 60 };
 
 enum MotorId {
@@ -47,6 +47,7 @@ void setup() {
 
 void loop() {
   /* CHARGE!!! */
+  delay(3000);
   buzzerCharge();
   
   /* DEMO */
@@ -70,7 +71,7 @@ void loop() {
 }
 
 void motorCommand(unsigned int motion, unsigned int dir, unsigned int duration) {
-  unsigned int oppo = (dir == FWD) ? FWD : REV;
+  unsigned int oppo = (dir == FWD) ? REV : FWD;
   
   switch (motion) {
     case STRAIGHT:
